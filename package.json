@@ -1,0 +1,25 @@
+{
+  "name": "est16-core",
+  "version": "0.0.1",
+  "description": "자바스크립트 코어를 학습하기 위한 문서입니다.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server client --host=localhost --port=5500 --no-browser"
+  },
+  "keywords": [
+    "javascript",
+    "ECMAScript",
+    "core"
+  ],
+  "author": "범쌤",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.10.0",
+    "globals": "17.12.0",
+    "live-server": "1.2.2",
+    "nodemon": "3.1.14",
+    "prettier": "3.9.8"
+  }
+}
