@@ -91,3 +91,6 @@ const message = didWatchMovie.includes('no') ? '영화 재밌더라! 한번 봐�
 
 
 
+
+
+함수() || false || 함수2()
