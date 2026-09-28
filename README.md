@@ -18,6 +18,9 @@
 | 8 | Operators (1) | [8.operations-1.js](client/chapter/core/8.operations-1.js) | 단항·이항·삼항 연산자, 산술 연산자, 연산자 우선순위, 전개 구문 / 나머지 매개변수 |
 | 9 | Operators (2) | [9.operations-2.js](client/chapter/core/9.operations-2.js) | 비교 연산자, 동등(`==`) vs 일치(`===`), 사전편집(lexicographical) 순 문자 비교 |
 | 10 | Condition (1) | [10.condition-1.js](client/chapter/core/10.condition-1.js) | `if` / `else if` / `else`, 중첩 조건문, 조건부(삼항) 연산자와 멀티 조건식 |
+| 11 | Condition (2) | [11.condition-2.js](client/chapter/core/11.condition-2.js) | 논리 연산자(`&&`, `\|\|`, `!`), Truthy / Falsy 탐색, 논리 할당 연산자, 로그인 조건 처리 실습 |
+| 12 | Condition (3) | [12.condition-3.js](client/chapter/core/12.condition-3.js) | `switch` 문, `case` 묶음 처리와 `break`, `if` 문 변환, 함수로 분리한 요일 판별 실습 |
+| 13 | Condition (4) | [13.condition-4.js](client/chapter/core/13.condition-4.js) | 널 병합 연산자(`??`), `??` vs `\|\|` 비교, 논리 할당 연산자(`&&=`, `\|\|=`, `??=`) |
 
 ## 폴더 구조
 
@@ -48,7 +51,7 @@ npm run dev
 학습할 챕터는 [client/index.html](client/index.html)의 `<script>` 경로를 바꿔서 불러옵니다.
 
 ```html
-<script src="./chapter/core/10.condition-1.js"></script>
+<script src="./chapter/core/13.condition-4.js"></script>
 ```
 
 브라우저 개발자 도구(F12)의 **Console** 탭에서 실행 결과를 확인합니다.
