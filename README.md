@@ -21,6 +21,11 @@
 | 11 | Condition (2) | [11.condition-2.js](client/chapter/core/11.condition-2.js) | 논리 연산자(`&&`, `\|\|`, `!`), Truthy / Falsy 탐색, 논리 할당 연산자, 로그인 조건 처리 실습 |
 | 12 | Condition (3) | [12.condition-3.js](client/chapter/core/12.condition-3.js) | `switch` 문, `case` 묶음 처리와 `break`, `if` 문 변환, 함수로 분리한 요일 판별 실습 |
 | 13 | Condition (4) | [13.condition-4.js](client/chapter/core/13.condition-4.js) | 널 병합 연산자(`??`), `??` vs `\|\|` 비교, 논리 할당 연산자(`&&=`, `\|\|=`, `??=`) |
+| 14 | Loop (1) | [14.loop-1.js](client/chapter/core/14.loop-1.js) | `while` 문, 배열 순방향 / 역방향 순환, `console.time`으로 성능 비교 |
+| 15 | Loop (2) | [15.loop-2.js](client/chapter/core/15.loop-2.js) | `do ~ while` 문, `break`, 타입 가드(validation), 형제 노드 탐색 함수(`next` / `prev`) |
+| 16 | Loop (3) | [16.loop-3.js](client/chapter/core/16.loop-3.js) | `for` 문, `continue` / `break`, `while` → `for` 변환, `split()`, 원본 훼손(`pop`) 주의 |
+| 17 | Loop (4) | [17.loop-4.js](client/chapter/core/17.loop-4.js) | `for ~ in` 문, 프로토타입 오염과 `in` 연산자, `Object.hasOwn` / `hasOwnProperty.call`, 배열 순환 시 주의점 |
+| 18 | Loop (5) | [18.loop-5.js](client/chapter/core/18.loop-5.js) | `for ~ of` 문, iterable / enumerable 개념, 유사 배열(array-like), `Object.keys` / `values` / `entries` |
 
 ## 폴더 구조
 
@@ -51,7 +56,7 @@ npm run dev
 학습할 챕터는 [client/index.html](client/index.html)의 `<script>` 경로를 바꿔서 불러옵니다.
 
 ```html
-<script src="./chapter/core/13.condition-4.js"></script>
+<script defer src="./chapter/core/18.loop-5.js"></script>
 ```
 
 브라우저 개발자 도구(F12)의 **Console** 탭에서 실행 결과를 확인합니다.
