@@ -9,5 +9,6 @@
       }
     ],
     "comments": ""
-  }
+  },
+  "workbench.browser.openLocalhostLinks": false
 }
