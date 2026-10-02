@@ -25,9 +25,11 @@
 | 15 | Loop (2) | [15.loop-2.js](client/chapter/core/15.loop-2.js) | `do ~ while` 문, `break`, 타입 가드(validation), 형제 노드 탐색 함수(`next` / `prev`) |
 | 16 | Loop (3) | [16.loop-3.js](client/chapter/core/16.loop-3.js) | `for` 문, `continue` / `break`, `while` → `for` 변환, `split()`, 원본 훼손(`pop`) 주의 |
 | 17 | Loop (4) | [17.loop-4.js](client/chapter/core/17.loop-4.js) | `for ~ in` 문, 프로토타입 오염과 `in` 연산자, `Object.hasOwn` / `hasOwnProperty.call`, 배열 순환 시 주의점 |
-| 18 | Loop (5) | [18.loop-5.js](client/chapter/core/18.loop-5.js) | `for ~ of` 문, iterable / enumerable 개념, 유사 배열(array-like), `Object.keys` / `values` / `entries`, 구조 분해 할당, 중첩 객체 순환 |
+| 18 | Loop (5) | [18.loop-5.js](client/chapter/core/18.loop-5.js) | `for ~ of` 문, iterable / enumerable 개념, 유사 배열(array-like), `Object.keys` / `values` / `entries`, 구조 분해 할당, 중첩 객체 순환(`for ~ in` + `Object.hasOwn` / `for ~ of` + `Object.entries`) |
 | 19 | Function (1) | [19.function-1.js](client/chapter/core/19.function-1.js) | 함수 선언 / 호출, 매개변수 기본값, 필수 인수 검증(`throw new Error`), `rem` 함수, `getComputedStyle`, IIFE로 캡슐화한 `css` getter / setter 실습 |
 | 20 | Function (2) | [20.function-2.js](client/chapter/core/20.function-2.js) | 함수 표현식(익명 / 기명), `arguments` 유사 배열 → 배열 변환(`Array.from`, 전개 구문), `forEach` / `reduce`, 콜백 함수, IIFE와 클로저 캡슐화 |
+| 21 | Function (3) | [21.function-3.js](client/chapter/core/21.function-3.js) | 화살표 함수, 나머지 매개변수(`...args`)와 `for ~ of` / `forEach` / `reduce` 합계, 화살표 함수와 `this` 바인딩, 메서드 정의 방식(일반 / 화살표 / concise method), 생성자 함수(`new`), `pow` / `repeat` 함수 실습 |
+| 22 | Function (4) | [22.function-4.js](client/chapter/core/22.function-4.js) | 재귀(recursion) 기반·단계·깊이, 재귀 `pow` / `factorial` / `fibonacci`, 실행 컨텍스트 스택, 반복문 vs 재귀 비교, 메모이제이션(`memoFibo.cache`), 중첩 객체 월급 합계(`sumSalaries`) 실습 |
 
 ## 폴더 구조
 
@@ -58,7 +60,7 @@ npm run dev
 학습할 챕터는 [client/index.html](client/index.html)의 `<script>` 경로를 바꿔서 불러옵니다.
 
 ```html
-<script defer src="./chapter/core/20.function-2.js"></script>
+<script defer src="./chapter/core/22.function-4.js"></script>
 ```
 
 브라우저 개발자 도구(F12)의 **Console** 탭에서 실행 결과를 확인합니다.
