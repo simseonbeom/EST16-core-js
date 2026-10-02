@@ -171,32 +171,32 @@ for (const [subject, score] of Object.entries(scores)) {
 // 객체의 키, 값 순환
 // - for ~ in 문
 
-// for (const key in randomUser) {
-//   if (Object.hasOwn(randomUser, key)) {
-//     const L1 = randomUser[key];
-//     console.log(L1);
+for (const key in randomUser) {
+  if (Object.hasOwn(randomUser, key)) {
+    const L1 = randomUser[key];
+    console.log(L1);
 
-//     if (typeof L1 === 'object') {
-//       for (const key in L1) {
-//         if (Object.hasOwn(L1, key)) {
-//           const L2 = L1[key];
+    if (typeof L1 === 'object') {
+      for (const key in L1) {
+        if (Object.hasOwn(L1, key)) {
+          const L2 = L1[key];
 
-//           console.log('\t', L2);
+          console.log('\t', L2);
 
-//           if (typeof L2 === 'object') {
-//             for (const key in L2) {
-//               if (Object.hasOwn(L2, key)) {
-//                 const L3 = L2[key];
+          if (typeof L2 === 'object') {
+            for (const key in L2) {
+              if (Object.hasOwn(L2, key)) {
+                const L3 = L2[key];
 
-//                 console.log('\t\t', L3);
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+                console.log('\t\t', L3);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // - for ~ of 문
 
@@ -223,3 +223,6 @@ for (const [key,value] of Object.entries(randomUser)) {
 }
 
 // - 성능 비교 진단
+
+
+
