@@ -30,6 +30,10 @@
 | 20 | Function (2) | [20.function-2.js](client/chapter/core/20.function-2.js) | 함수 표현식(익명 / 기명), `arguments` 유사 배열 → 배열 변환(`Array.from`, 전개 구문), `forEach` / `reduce`, 콜백 함수, IIFE와 클로저 캡슐화 |
 | 21 | Function (3) | [21.function-3.js](client/chapter/core/21.function-3.js) | 화살표 함수, 나머지 매개변수(`...args`)와 `for ~ of` / `forEach` / `reduce` 합계, 화살표 함수와 `this` 바인딩, 메서드 정의 방식(일반 / 화살표 / concise method), 생성자 함수(`new`), `pow` / `repeat` 함수 실습 |
 | 22 | Function (4) | [22.function-4.js](client/chapter/core/22.function-4.js) | 재귀(recursion) 기반·단계·깊이, 재귀 `pow` / `factorial` / `fibonacci`, 실행 컨텍스트 스택, 반복문 vs 재귀 비교, 메모이제이션(`memoFibo.cache`), 중첩 객체 월급 합계(`sumSalaries`) 실습 |
+| 23 | Object (1) | [23.object-1.js](client/chapter/core/23.object-1.js) | 객체 리터럴(key:value), 점 / 대괄호 표기법, 계산된 프로퍼티, 단축 프로퍼티, `getKeys` / `getValues` / `getEntries` 유틸 함수, 프로퍼티 제거(`null`) vs 삭제(`delete`), 배열·객체 구조 분해 할당(기본값, 별칭, 나머지), 타입 검사 유틸(`typeOf` / `isObject`) 활용 |
+| 24 | Object (2) | [24.object-2.js](client/chapter/core/24.object-2.js) | 복사(copy) vs 참조(reference), 객체 복사(`for ~ in` / `Object.assign` / 전개 구문), 객체 병합(mixin), 얕은 복사 vs 깊은 복사, 재귀 `cloneDeep` 유틸 함수, Lodash `_.cloneDeep` |
+| 25 | Object (3) | [25.object-3.js](client/chapter/core/25.object-3.js) | 가비지 컬렉션, 도달 가능성(reachability) 기준 메모리 관리, 함수 종료 시 내부 변수 해제 |
+| 26 | Object (4) | [26.object-4.js](client/chapter/core/26.object-4.js) | 객체 메서드와 `this`, 런타임에 결정되는 `this` 참조, 메서드 단축 구문, 일반 함수 vs 화살표 함수의 `this`, 주문 총액(`totalPrice`) 메서드 실습 과제 |
 
 ## 폴더 구조
 
@@ -60,7 +64,7 @@ npm run dev
 학습할 챕터는 [client/index.html](client/index.html)의 `<script>` 경로를 바꿔서 불러옵니다.
 
 ```html
-<script defer src="./chapter/core/22.function-4.js"></script>
+<script defer src="./chapter/core/26.object-4.js"></script>
 ```
 
 브라우저 개발자 도구(F12)의 **Console** 탭에서 실행 결과를 확인합니다.
