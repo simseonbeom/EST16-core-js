@@ -36,6 +36,12 @@
 | 26 | Object (4) | [26.object-4.js](client/chapter/core/26.object-4.js) | 객체 메서드와 `this`, 런타임에 결정되는 `this` 참조, 메서드 단축 구문, 일반 함수 vs 화살표 함수의 `this`, 단계별 접근 / `forEach` / `reduce`로 구현한 주문 총액(`totalPrice`) 메서드 실습, 화살표 함수 메서드(`addItem`)를 단축 구문으로 수정 |
 | 27 | Prototype (1) | [27.prototype-1.js](client/chapter/core/27.prototype-1.js) | 프로토타입 상속(`__proto__`) 체인, 접근자 프로퍼티(getter / setter), `Object.defineProperty`, 생성자 함수 상속(`Animal.call(this)`), 정적 메서드, `call` / `apply` / `bind`와 `this` 지정, 메서드 빌려쓰기, 이벤트 리스너(`addEventListener`)의 `this` |
 | 28 | Prototype (2) | [28.prototype-2.js](client/chapter/core/28.prototype-2.js) | `class` 문법으로 재정의, 클래스 필드, `constructor`, getter / setter, `static` 필드·메서드, private 필드(`#`), `extends` / `super` 상속, 내장 클래스 구조(`Array` → `Object`)로 보는 인스턴스 메서드 vs 정적 메서드 |
+| 29 | Closure (1) | [29.closure-1.js](client/chapter/core/29.closure-1.js) | 클로저 개념(함수가 선언된 환경 기억), 커링 함수(`first` → `second`), 독립된 상태를 갖는 `counter`, `multi`로 만든 `double` / `triple`, 화살표 함수 커링, 실행 컨텍스트와 어휘 환경(Lexical Environment), 스코프 체인, 실행 컨텍스트 스택(LIFO)과 단일 스레드 |
+| 30 | Closure (2) | [30.closure-2.js](client/chapter/core/30.closure-2.js) | 클로저로 외부 함수 변수 변경(`earth` / `UFO`), 클로저 활용 사례, IIFE로 상태(`isClicked`)를 은닉한 클릭 토글 핸들러(`addEventListener`), `[read, write]`를 반환하는 `useState` 구현과 배열 구조 분해 할당 |
+| 31 | Optional Chaining | [31.optional.js](client/chapter/core/31.optional.js) | 없는 프로퍼티 접근 시 런타임 오류, `in` 연산자 / 논리곱(`&&`) 방어 코드, 옵셔널 체이닝(`?.`, `?.()`), Browser API와 싱글 스레드, `setTimeout` / `setInterval` 실행 순서, `requestAnimationFrame` / `cancelAnimationFrame` 애니메이션 |
+| 32 | Primitive | [32.primitive.js](client/chapter/core/32.primitive.js) | 원시 값의 메서드 사용 원리, 임시 래퍼 객체(`String` / `Number` / `Boolean` / `Symbol`), 래퍼 객체가 없는 `null` / `undefined` |
+| 33 | Number | [33.number.js](client/chapter/core/33.number.js) | 숫자 구분자(`100_000_000`), 지수 표기법(`1e8`, `1e-6`), 어림수(`Math.floor` / `round` / `ceil` / `trunc`), `Math.random` / `max` / `min` / `pow` / `abs` / `PI`, 범위 난수 함수(`getRandomMinMax`), 진법 표기(`0x` / `0o` / `0b`)와 `parseInt` / `toString(base)` |
+| 34 | String | [34.string.js](client/chapter/core/34.string.js) | `length`, `charAt`, 문자열 불변성(새 문자열 생성), 부분 문자열 추출(`slice` / `substring`), 포함 여부 확인(`includes` / `startsWith` / `endsWith`), `trim`, `repeat` |
 
 ## 폴더 구조
 
@@ -66,7 +72,7 @@ npm run dev
 학습할 챕터는 [client/index.html](client/index.html)의 `<script>` 경로를 바꿔서 불러옵니다.
 
 ```html
-<script defer src="./chapter/core/28.prototype-2.js"></script>
+<script defer src="./chapter/core/34.string.js"></script>
 ```
 
 브라우저 개발자 도구(F12)의 **Console** 탭에서 실행 결과를 확인합니다.
