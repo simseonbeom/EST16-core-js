@@ -42,6 +42,10 @@
 | 32 | Primitive | [32.primitive.js](client/chapter/core/32.primitive.js) | 원시 값의 메서드 사용 원리, 임시 래퍼 객체(`String` / `Number` / `Boolean` / `Symbol`), 래퍼 객체가 없는 `null` / `undefined` |
 | 33 | Number | [33.number.js](client/chapter/core/33.number.js) | 숫자 구분자(`100_000_000`), 지수 표기법(`1e8`, `1e-6`), 어림수(`Math.floor` / `round` / `ceil` / `trunc`), `Math.random` / `max` / `min` / `pow` / `abs` / `PI`, 범위 난수 함수(`getRandomMinMax`), 진법 표기(`0x` / `0o` / `0b`)와 `parseInt` / `toString(base)` |
 | 34 | String | [34.string.js](client/chapter/core/34.string.js) | `length`, `charAt`, 문자열 불변성(새 문자열 생성), 부분 문자열 추출(`slice` / `substring`), 포함 여부 확인(`includes` / `startsWith` / `endsWith`), `trim`, `repeat` |
+| 35 | Array (1) | [35.array-1.js](client/chapter/core/35.array-1.js) | 객체(키:값 집합) vs 배열(순서가 있는 값 집합), `split`으로 배열 선언, `length`, 요소 추가 / 제거(`unshift` / `push` / `shift` / `pop`), 큐(FIFO) vs 스택(LIFO), 배열 복사(`Array.from` / `slice` / 전개 구문), 다차원 배열(행렬) |
+| 36 | Array (2) | [36.array-2.js](client/chapter/core/36.array-2.js) | 배열 메서드 분류(요소 순환 / 원형 파괴 / 새로운 배열 반환), `forEach`와 이벤트 바인딩, `toReversed` / `toSorted`, `map`(템플릿 리터럴 문자열 가공, 구조 분해 할당 매개변수)으로 만든 HTML 템플릿과 `insertAdjacentHTML` 렌더링, `find` / `filter` / `reduce`, `split` / `join`, `forEach` / `map` / `filter` / `reduce` 직접 구현, 커링(`curry` / `curryN`)과 `go` 함수 파이프라인 실습 |
+| 37 | Try Catch | [37.tryCatch.js](client/chapter/core/37.tryCatch.js) | `try ... catch` 동작 알고리즘, 런타임 오류(예외), 동기적 동작과 비동기 처리 시 주의점, 오류 객체(`name` / `message` / `stack`), `throw`로 오류 생성(`Error` / `TypeError` / `SyntaxError` / `ReferenceError`), `finally` 절, `JSON.stringify` / `JSON.parse` 검증과 `catch({message})` 구조 분해 실습 |
+| DOM 1 | BOM | [1.BOM.js](client/chapter/dom/1.BOM.js) | 호스트 환경과 브라우저 객체 모델(BOM), `window` / `location` / `navigator` / `screen` / `history` 객체 구조 분해, URL 구성 요소(`href` / `protocol` / `host` / `search` / `hash` / `pathname`), `URLSearchParams` 순환, 콜백으로 감싼 `geolocation.getCurrentPosition`, `mediaDevices.getUserMedia`로 `<video>`에 카메라 스트림 연결 |
 
 ## 폴더 구조
 
@@ -72,7 +76,7 @@ npm run dev
 학습할 챕터는 [client/index.html](client/index.html)의 `<script>` 경로를 바꿔서 불러옵니다.
 
 ```html
-<script defer src="./chapter/core/34.string.js"></script>
+<script defer src="./chapter/dom/1.BOM.js"></script>
 ```
 
 브라우저 개발자 도구(F12)의 **Console** 탭에서 실행 결과를 확인합니다.
