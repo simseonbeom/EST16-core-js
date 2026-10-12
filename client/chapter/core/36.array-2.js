@@ -74,6 +74,7 @@ const people = [
 people.forEach((user)=>{
   // console.log( user );
   
+  
 })
 
 
@@ -139,7 +140,7 @@ console.clear();
 // ⭐️ map ⭐️  새로운 배열을 반환 
 // 사람들의 이름만을 모아놓은 새로운 배열 
 
-const names = people.map((user,index) => user.name)
+const names = people.map((user,index) => `나의 이름은 : ${user.name}`)
 
 
 // 현재 나이에서 전부 +2살을한 새로운 배열을 만들어주세요.
