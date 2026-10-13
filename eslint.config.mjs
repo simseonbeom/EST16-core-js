@@ -14,6 +14,9 @@ const customGlobals = {
   isUndefined: 'readonly',
   isFunction: 'readonly',
   isMath: 'readonly',
+  getNode: 'readonly',
+  getNodes: 'readonly',
+  attr: 'readonly',
 };
 
 export default defineConfig([

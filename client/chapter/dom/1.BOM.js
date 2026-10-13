@@ -48,6 +48,8 @@ for (const [key, value] of urlParams) {
   console.log(`${key}:${value}`);
 }
 
+console.log( $0 );
+
 
 /* Navigator 객체 -------------------------------------------------------- */
 

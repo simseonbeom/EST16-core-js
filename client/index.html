@@ -6,13 +6,28 @@
   <title>JS를 배워보자!</title>
 
   <!-- <script src="./index.js"></script> -->
-  <script defer src="./lib/utils/type.js"></script>
-  <script defer src="./chapter/dom/1.BOM.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="./lib/utils/type.js"></script>
+  <script src="./lib/dom/getNode.js"></script>
+  <script src="./lib/dom/attr.js"></script>
+  <script defer src="./chapter/dom/5.manipulation.js"></script>
 
 
 </head>
 <body>
+
+  <div 선범="심"></div>
   
+  <nav class="navigation">
+    <h2>메인 메뉴</h2>
+    <ul>
+      <li class="home">HOME</li>
+      <li class="about">ABOUT</li>
+      <li class="contact" data-name="contact">CONTACT</li>
+    </ul>
+  </nav>
+
+
   <h1 lang="en" class="first">
     <span>Learning</span>
     ECMAScript</h1>
@@ -23,6 +38,7 @@
   <!-- 주석입니다 -->
   <h3 lang="en" class="third">
     <span>Javascript</span>
+    <div class="about">hello</div>
   </h3>
 
   <button type="button">click me!</button>
