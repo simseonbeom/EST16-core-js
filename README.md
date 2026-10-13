@@ -46,6 +46,10 @@
 | 36 | Array (2) | [36.array-2.js](client/chapter/core/36.array-2.js) | 배열 메서드 분류(요소 순환 / 원형 파괴 / 새로운 배열 반환), `forEach`와 이벤트 바인딩, `toReversed` / `toSorted`, `map`(템플릿 리터럴 문자열 가공, 구조 분해 할당 매개변수)으로 만든 HTML 템플릿과 `insertAdjacentHTML` 렌더링, `find` / `filter` / `reduce`, `split` / `join`, `forEach` / `map` / `filter` / `reduce` 직접 구현, 커링(`curry` / `curryN`)과 `go` 함수 파이프라인 실습 |
 | 37 | Try Catch | [37.tryCatch.js](client/chapter/core/37.tryCatch.js) | `try ... catch` 동작 알고리즘, 런타임 오류(예외), 동기적 동작과 비동기 처리 시 주의점, 오류 객체(`name` / `message` / `stack`), `throw`로 오류 생성(`Error` / `TypeError` / `SyntaxError` / `ReferenceError`), `finally` 절, `JSON.stringify` / `JSON.parse` 검증과 `catch({message})` 구조 분해 실습 |
 | DOM 1 | BOM | [1.BOM.js](client/chapter/dom/1.BOM.js) | 호스트 환경과 브라우저 객체 모델(BOM), `window` / `location` / `navigator` / `screen` / `history` 객체 구조 분해, URL 구성 요소(`href` / `protocol` / `host` / `search` / `hash` / `pathname`), `URLSearchParams` 순환, 콜백으로 감싼 `geolocation.getCurrentPosition`, `mediaDevices.getUserMedia`로 `<video>`에 카메라 스트림 연결 |
+| DOM 2 | DOM Traversal | [2.DOM.js](client/chapter/dom/2.DOM.js) | DOM 트리 탐색: 모든 노드용(`parentNode` / `childNodes` / `firstChild` / `lastChild` / `previousSibling` / `nextSibling`) vs 요소 노드 전용(`parentElement` / `children` / `firstElementChild` / `lastElementChild` / `previousElementSibling` / `nextElementSibling`), 문서 대상 찾기(`getElementById` / `getElementsByTagName` / `getElementsByClassName` / `querySelector` / `querySelectorAll` / `closest`)와 확인(`matches` / `contains`), 속성 선택자(`li[data-name="contact"]`)로 `nav` 메뉴 탐색 실습, `getNode` / `getNodes` 유틸 함수(`lib/dom/getNode.js`) |
+| DOM 3 | Node Class | [3.nodeClass.js](client/chapter/dom/3.nodeClass.js) | DOM 노드 클래스 상속 구조(`EventTarget` → `Node` → `Element` → `HTMLElement` → `HTMLDivElement` 등), 노드 정보(`nodeType`, `nodeName` vs `tagName`), 노드 콘텐츠 읽기 / 쓰기(`innerHTML` getter / setter와 XSS 주의, `textContent`), `hidden` 프로퍼티(`display:none`과 동일), GSAP(`gsap.from`)의 `stagger` / `repeat` / `yoyo` 등장 애니메이션 |
+| DOM 4 | Attribute | [4.attribute.js](client/chapter/dom/4.attribute.js) | HTML 속성(항상 문자열, 표준 속성만 DOM 프로퍼티로 매핑) vs DOM 프로퍼티(JS 객체, 대·소문자 구분), `hasAttribute` / `getAttribute` / `setAttribute` / `removeAttribute`, `attributes` 순환, 비표준 `data-*` 속성과 `dataset`, `getAttr` / `setAttr`를 통합한 `attr` 유틸 함수(`lib/dom/attr.js`, 빈 문자열 전달 시 속성 제거) |
+| DOM 5 | Manipulation | [5.manipulation.js](client/chapter/dom/5.manipulation.js) | 노드 생성(`createElement` / `createTextNode` / `cloneNode`), 삽입 / 삭제(`append` / `prepend` / `before` / `after` / `replaceWith` / `remove`), 오래된 메서드(`appendChild` / `insertBefore` / `removeChild` / `replaceChild`), `insertAdjacentHTML` 위치(`beforebegin` / `afterbegin` / `beforeend` / `afterend`)와 HTML 템플릿 삽입, `insertBefore` / `insertFirst` / `insertLast` / `insertAfter` 유틸 함수(`lib/dom/insert.js`) |
 
 ## 폴더 구조
 
@@ -76,7 +80,7 @@ npm run dev
 학습할 챕터는 [client/index.html](client/index.html)의 `<script>` 경로를 바꿔서 불러옵니다.
 
 ```html
-<script defer src="./chapter/dom/1.BOM.js"></script>
+<script defer src="./chapter/dom/5.manipulation.js"></script>
 ```
 
 브라우저 개발자 도구(F12)의 **Console** 탭에서 실행 결과를 확인합니다.
