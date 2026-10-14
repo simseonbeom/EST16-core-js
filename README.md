@@ -50,6 +50,10 @@
 | DOM 3 | Node Class | [3.nodeClass.js](client/chapter/dom/3.nodeClass.js) | DOM 노드 클래스 상속 구조(`EventTarget` → `Node` → `Element` → `HTMLElement` → `HTMLDivElement` 등), 노드 정보(`nodeType`, `nodeName` vs `tagName`), 노드 콘텐츠 읽기 / 쓰기(`innerHTML` getter / setter와 XSS 주의, `textContent`), `hidden` 프로퍼티(`display:none`과 동일), GSAP(`gsap.from`)의 `stagger` / `repeat` / `yoyo` 등장 애니메이션 |
 | DOM 4 | Attribute | [4.attribute.js](client/chapter/dom/4.attribute.js) | HTML 속성(항상 문자열, 표준 속성만 DOM 프로퍼티로 매핑) vs DOM 프로퍼티(JS 객체, 대·소문자 구분), `hasAttribute` / `getAttribute` / `setAttribute` / `removeAttribute`, `attributes` 순환, 비표준 `data-*` 속성과 `dataset`, `getAttr` / `setAttr`를 통합한 `attr` 유틸 함수(`lib/dom/attr.js`, 빈 문자열 전달 시 속성 제거) |
 | DOM 5 | Manipulation | [5.manipulation.js](client/chapter/dom/5.manipulation.js) | 노드 생성(`createElement` / `createTextNode` / `cloneNode`), 삽입 / 삭제(`append` / `prepend` / `before` / `after` / `replaceWith` / `remove`), 오래된 메서드(`appendChild` / `insertBefore` / `removeChild` / `replaceChild`), `insertAdjacentHTML` 위치(`beforebegin` / `afterbegin` / `beforeend` / `afterend`)와 HTML 템플릿 삽입, `insertBefore` / `insertFirst` / `insertLast` / `insertAfter` 유틸 함수(`lib/dom/insert.js`) |
+| DOM 6 | Style | [6.style.js](client/chapter/dom/6.style.js) | 클래스 관리 프로퍼티(`className` 문자열 전체 vs `classList` 개별 조작), `classList.add` / `remove` / `toggle`, `style.cssText`로 스타일 전체 지정, 계산된 스타일 읽기(`getComputedStyle`, 읽기 전용), `addClass` / `removeClass` / `toggleClass` 유틸 함수(`lib/dom/css.js`, 쉼표 문자열·배열·객체로 다중 클래스 추가) |
+| DOM 7 | Event | [7.event.js](client/chapter/dom/7.event.js) | 이벤트 핸들링 3가지 방법(HTML 속성 `onclick` / DOM 프로퍼티 `element.onclick` / `addEventListener`), `addEventListener` / `removeEventListener`, 마우스 좌표(`offsetX` / `offsetY`)와 `offsetWidth` / `offsetHeight`로 공 이동(`transform: translate`) 실습, `mousemove` / `resize` 이벤트 과다 호출 제어를 위한 `throttle` / `debounce` 유틸 함수(`lib/utils/throttle.js` / `debounce.js`) |
+| DOM 8 | Bubbling & Capturing | [8.bubble.js](client/chapter/dom/8.bubble.js) | 이벤트 버블링(`section` → `article` → `p` 중첩 구조), `e.target` vs `e.currentTarget`, `stopPropagation`으로 전파 중단, 버블링되지 않는 `mouseenter` / `mouseleave`, 캡처링 |
+| DOM 9 | Delegation | [9.delegation.js](client/chapter/dom/9.delegation.js) | 이벤트 위임(부모 `nav`에 핸들러 하나로 `li` 클릭 처리), `e.target.closest('li')`로 대상 탐색과 가드, `submit` 이벤트 `preventDefault`, 클래스(`classList.contains`) / 속성(`getAttribute('data-name')`) / `dataset` 기반 분기 처리 |
 
 ## 폴더 구조
 
@@ -80,7 +84,7 @@ npm run dev
 학습할 챕터는 [client/index.html](client/index.html)의 `<script>` 경로를 바꿔서 불러옵니다.
 
 ```html
-<script defer src="./chapter/dom/5.manipulation.js"></script>
+<script defer src="./chapter/dom/9.delegation.js"></script>
 ```
 
 브라우저 개발자 도구(F12)의 **Console** 탭에서 실행 결과를 확인합니다.
