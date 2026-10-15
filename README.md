@@ -32,8 +32,8 @@ git switch practice
 | --- | --- | --- | --- |
 | 01 | Vanilla JS 갤러리 | [part01.html](client/part01.html) · [part01.js](client/js/part01.js) | 이벤트 위임(`addEventListener` + `closest`), `is-active` 클래스 토글, `dataset`으로 인덱스 수집, 데이터 배열 기반 `src` / `alt` 교체, GSAP `SplitText` 글자 등장 애니메이션 |
 | 02 | jQuery 갤러리 | [part02.html](client/part02.html) · [part02.js](client/js/part02.js) | part01을 jQuery로 재구현, `.on('click', 'li', ...)` 이벤트 위임, `removeClass` / `addClass`, `attr()` 다중 설정, `stop(true,true)` + `fadeOut` / `fadeIn` 전환, jQuery의 한계(용량·SPA 미지원) 정리 |
-| 03 | Swiper 슬라이드 | [part03.html](client/part03.html) · [part03.js](client/js/part03.js) | 외부 라이브러리(Swiper 12) CDN 연결, `new Swiper('.swiper', { loop: true })`, `swiper-wrapper` / `swiper-slide` 마크업 구조 |
-| 04 | Facebook UI | [part04.html](client/part04.html) · [part04.js](client/js/part04.js) | 좋아요 / 댓글 / 더보기 메뉴 UI 마크업과 스타일 구성 (**스크립트는 작성 예정**) |
+| 03 | Swiper 슬라이드 | [part03.html](client/part03.html) · [part03.js](client/js/part03.js) | 외부 라이브러리(Swiper 12) CDN 연결, `new Swiper('.swiper', { ... })` 옵션 구성(`loop`, `speed`, `autoplay`), `swiper-wrapper` / `swiper-slide` 마크업 구조, `pagination.renderBullet`으로 데이터 배열 기반 썸네일 불릿 커스텀(`bulletClass` / `bulletActiveClass`), `data-swiper-parallax-*` 속성으로 슬라이드 패럴랙스, `matchMedia('(prefers-reduced-motion)')`로 모션 축소 설정 반영 |
+| 04 | Facebook UI | [part04.html](client/part04.html) · [part04.js](client/js/part04.js) | `.contents` 한 곳에 이벤트 위임, `parentElement`로 올라가며 `data-name` 탐색, `dataset.name` 분기(좋아요 `toggleClass`, 댓글 `focus()`, 더보기 메뉴 토글, `confirm` 후 게시글 `remove()`), 템플릿 리터럴로 댓글 마크업 생성 후 `insertLast` 삽입, 입력값 초기화 및 `scrollTop = scrollHeight` 자동 스크롤 |
 
 ### 공용 DOM 유틸 (`client/lib/dom`)
 
@@ -63,7 +63,7 @@ EST16-core-js (practice)
 │   │   ├── part01.js         # Vanilla JS 갤러리
 │   │   ├── part02.js         # jQuery 갤러리
 │   │   ├── part03.js         # Swiper 슬라이드
-│   │   └── part04.js         # Facebook UI (작성 예정)
+│   │   └── part04.js         # Facebook UI (이벤트 위임·댓글 추가)
 │   ├── lib
 │   │   └── dom               # 공용 DOM 유틸 (전역 함수)
 │   ├── style
