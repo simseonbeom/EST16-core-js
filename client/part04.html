@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <title>facebook</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/part04.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/part04/logo.png"
+      type="image/x-icon"
+    />
+    <script defer src="./lib/dom/type.js"></script>
+    <script defer src="./lib/dom/getNode.js"></script>
+    <script defer src="./lib/dom/attr.js"></script>
+    <script defer src="./lib/dom/css.js"></script>
+    <script defer src="./lib/dom/insert.js"></script>
+    <script defer src="./lib/dom/bindEvent.js"></script>
+
+    <script defer src="./js/part04.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <article class="contents">
+        <header>
+          <div class="profile_container">
+            <div class="profile_img">
+              <img src="./assets/part04/tigerr.png" alt="" />
+            </div>
+            <div>
+              <div class="name"><a href="#">심심</a></div>
+              <div class="time">1시간 전</div>
+            </div>
+            <div class="more" data-name="more">
+              <span class="icon--more"></span>
+              <ul class="hidden_menu" data-name="contextMenu">
+                <li class="friendRequest">
+                  <button type="button">친구요청</button>
+                </li>
+                <li class="save"><button type="button">저장하기</button></li>
+                <li class="edit"><a href="edit.html">수정</a></li>
+                <li class="delete" data-name="delete">
+                  <button type="button" value="삭제">삭제</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+        <div class="main_article">너무 예쁜 티니핑 공주가 된 해윤이</div>
+
+        <div class="img_section">
+          <a href="#"><img src="./assets/part04/visual.jpeg" alt="" /></a>
+        </div>
+
+        <div class="ajax_field">
+          <div class="like">
+            좋아요
+            <span class="like_count" id="like-count-37">1</span>
+            개
+          </div>
+          <div class="comment">
+            댓글
+            <span class="comment_count">2</span>
+            개
+          </div>
+        </div>
+
+        <div class="btn_container">
+          <button class="like_btn" data-name="like">
+            <span class="icon icon--like-line"></span>
+            좋아요
+          </button>
+          <button class="comment_btn" data-name="comment">
+            <span class="icon icon--comment-line"></span>
+            댓글
+          </button>
+        </div>
+
+        <div class="comment_container">
+          <div class="id">
+            <div class="profile_img border_over">
+              <img src="./assets/part04/jang.png" alt="프로필사진" />
+            </div>
+            <div class="comment_field">
+              <div class="text_container">
+                <div class="name"><a href="#">장원영</a></div>
+                <div class="text_field">어머 해윤이도 곧 언니처럼 되겠네~</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="id">
+            <div class="profile_img border_over">
+              <img src="./assets/part04/musk.png" alt="프로필사진" />
+            </div>
+            <div class="comment_field">
+              <div class="text_container">
+                <div class="name"><a href="#">일론 머스크</a></div>
+                <div class="text_field">Let's go to Mars together bro!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment_input">
+          <div class="profile_img">
+            <img src="./assets/part04/tigerr.png" alt="" />
+          </div>
+          <div class="input_container">
+            <form>
+              <label for="comment37"></label>
+              <input
+                type="text"
+                id="comment37"
+                placeholder="댓글을 입력하세요..."
+              />
+
+              <button type="submit" class="send" data-name="send">
+                <span class="icon--send"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
