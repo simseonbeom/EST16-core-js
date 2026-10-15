@@ -1,4 +1,4 @@
-# EST16 Core JS — practice
+# EST16 Core JS — delegation
 
 > **EST-오르미 프론트엔드 부트캠프** 자바스크립트 실습 브랜치입니다.
 >
@@ -12,19 +12,36 @@
 | --- | --- | --- |
 | [`main`](../../tree/main) | 코어 문법 37챕터 + DOM 9챕터 학습 코드 | `chapter/core`, `chapter/dom`, `index.html` |
 | [`dom`](../../tree/dom) | DOM 챕터 작업용 (현재 `main`과 동일) | `main`과 동일 |
-| **`practice`** (현재) | **파트별 실습 과제 (part01 ~ part04)** | `js/`, `style/`, `assets/`, `part0*.html` |
+| **`delegation`** (현재) | **파트별 실습 과제 (part01 ~ part04)** | `js/`, `style/`, `assets/`, `part0*.html` |
 
 ```bash
 # 챕터별 문법 학습 코드를 보고 싶다면
 git switch main
 
 # 파트별 실습 과제를 보고 싶다면
-git switch practice
+git switch delegation
 ```
 
-> ⚠️ `practice` 브랜치에는 `client/chapter` 학습 코드가 없습니다.
+> ⚠️ `delegation` 브랜치에는 `client/chapter` 학습 코드가 없습니다.
 > 챕터 코드는 `main`에 그대로 남아 있으며, 두 브랜치는 **합치지 않고 따로 관리**합니다.
 > 공용 유틸(`client/lib`)만 양쪽에서 함께 발전시킵니다.
+
+### 브랜치 이름 변경 이력
+
+| 날짜 | 변경 | 비고 |
+| --- | --- | --- |
+| 2026-10-15 | `delegation` 생성 (`dom`에서 분기) | 실습 과제용 브랜치 |
+| 2026-10-15 | 작업이 `practice`라는 별도 브랜치에 쌓임 | 같은 커밋에서 분기된 중복 브랜치였음 |
+| 2026-10-15 | `practice` → **`delegation`** 으로 이름 통합 | 실습 커밋 전체가 `delegation`에 있음 |
+
+> 이전에 `origin/practice`를 받아 둔 로컬 저장소가 있다면 아래처럼 정리하세요.
+> `practice` 브랜치는 원격에서 삭제되었고, 커밋 내용은 `delegation`에 그대로 있습니다.
+
+```bash
+git fetch origin --prune
+git switch delegation
+git branch -D practice   # 로컬에 남은 옛 브랜치 삭제
+```
 
 ## 실습 목차
 
@@ -54,7 +71,7 @@ git switch practice
 ## 폴더 구조
 
 ```
-EST16-core-js (practice)
+EST16-core-js (delegation)
 ├── client
 │   ├── assets
 │   │   ├── part01            # 갤러리 이미지 (visual1~4)
@@ -85,8 +102,8 @@ EST16-core-js (practice)
 ## 시작하기
 
 ```bash
-# 저장소 복제 후 practice 브랜치로 이동
-git switch practice
+# 저장소 복제 후 delegation 브랜치로 이동
+git switch delegation
 
 # 의존성 설치
 npm install
