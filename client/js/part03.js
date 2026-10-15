@@ -25,12 +25,50 @@ const data = [
 
 
 
+// class Swiper{
+
+//   constructor(selector,options){
+//     document.querySelector(selector);
+//   }
+// }
+
+
+
+// class Swiper {
+
+//   constructor(selector){
+//     document.querySelector(selector);
+//   }
+
+// }
+
+
+const reduceMotion = window.matchMedia(
+  '(prefers-reduced-motion: reduce)'
+).matches;
+
 
 const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  // direction: 'vertical',
   loop: true,
-
+  speed: 2000,
+  parallax: !reduceMotion,
+  autoplay: {
+    delay: 3000,
+  },
+  pagination: {
+    el: '.pagination',
+    clickable:true,
+    bulletClass:'bullet',
+    bulletActiveClass:'is-active',
+    // type:'progressbar'
+    renderBullet: function (index, className){
+      return `
+        <span class=${className}>
+          <img src="./assets/part01/${data[index].src}" alt="${data[index].alt}"/>
+        </span>
+      `
+    }
+  },
 });
 
 
