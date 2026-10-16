@@ -1,5 +1,5 @@
 import { isNull, isUndefined, isString } from "../utils/type.js";
-import { getNode } from "./getNode./js";
+import { getNode } from "./getNode.js";
 
 /**
  * @function DOM Element의 속성 값을 가져오는 함수
@@ -50,7 +50,7 @@ function setAttr(node, prop, value){
  * @returns {string | null | void}
  */
 
-function attr(node, prop, value){
+export function attr(node, prop, value){
   if(isUndefined(value)){
     return getAttr(node,prop)
   }

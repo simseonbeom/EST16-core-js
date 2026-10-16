@@ -4,10 +4,6 @@ import { getNode } from "./getNode.js";
 
 
 
-export function sum(){
-  
-}
-
 
 
 export default function clearContent(node){

@@ -5,13 +5,31 @@
 
 
 
-import clearContent from "./lib/dom/clearContent.js";
-import { getNode as $, getNodes } from "./lib/dom/getNode.js";
-import { insertLast } from "./lib/dom/insert.js";
+import {
+  attr,
+  isString,
+  addClass,
+  insertLast,
+  removeClass,
+  getNode as $,
+  clearContent,
+} from "./lib/index.js";
+
+
+// import {useState} from 'react/index.js'
+
+
+
+// import clearContent from "./lib/dom/clearContent.js";
+// import { getNode as $, getNodes } from "./lib/dom/getNode.js";
+// import { insertLast } from "./lib/dom/insert.js";
+// import { attr } from "./lib/dom/attr.js";
+// import { addClass,removeClass } from "./lib/dom/css.js";
+// import { debounce } from "./lib/utils/debounce.js";
 
 
 //  named export    => import { 함수이름/변수이름 as $ } from '경로설정'
-//  default export  => import 함수이름/변수이름 from '경로설정'
+//  default export  => import 함수이름/변수이름, { 함수이름 }  from '경로설정'
 
 
 
