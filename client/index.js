@@ -1,6 +1,21 @@
 
 
 
+
+
+
+
+import clearContent from "./lib/dom/clearContent.js";
+import { getNode as $, getNodes } from "./lib/dom/getNode.js";
+import { insertLast } from "./lib/dom/insert.js";
+
+
+//  named export    => import { 함수이름/변수이름 as $ } from '경로설정'
+//  default export  => import 함수이름/변수이름 from '경로설정'
+
+
+
+
 // 1. input 선택하기
 // 2. input 이벤트 바인딩
 //    -addEventListener('input')
@@ -8,30 +23,28 @@
 // 4. 숫자 더하기
 // 5. result에 출력하기
 
-
-
-
 function phase1(){
 
-    const first = getNode('#firstNumber');
-    const second = getNode('#secondNumber');
-    const result = getNode('.result');
-    const clear = getNode('#clear');
+    const first = $('#firstNumber');
+    const second = $('#secondNumber');
+    const result = $('.result');
+    const clear = $('#clear');
 
     function handleInput(){
       const firstValue = Number(first.value);
       const secondValue = +second.value;
       const total = firstValue + secondValue;
 
-      result.textContent = ''
+      clearContent(result)
       insertLast(result,total);
     }
 
     function handleClear(e){
       e.preventDefault();
-      first.value = ''
-      second.value = ''
-      result.textContent = '-'
+      clearContent(first)
+      clearContent(second)
+      clearContent(result)
+      
       first.focus();
     }
 
@@ -47,9 +60,9 @@ phase1();
 function phase2(){
   // const first = getNode('#firstNumber');
   // const second = getNode('#secondNumber');
-  const calculator = getNode('.calculator');
-  const result = getNode('.result');
-  const clear = getNode('#clear');
+  const calculator = $('.calculator');
+  const result = $('.result');
+  const clear = $('#clear');
   const numberInputs = [...document.querySelectorAll('input:not(#clear)')];
 
   function handleInput(){

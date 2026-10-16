@@ -1,5 +1,6 @@
 
-
+import { getNode } from "./getNode.js";
+import { isString } from "../utils/type.js";
 
 
 /**
@@ -12,7 +13,7 @@
  * @return {void}
  */
 
-function insertBefore(node,text){
+export function insertBefore(node,text){
   if(isString(node)) node = getNode(node);
   node.insertAdjacentHTML('beforebegin',text);
 }
@@ -26,7 +27,7 @@ function insertBefore(node,text){
  * @param {string} text - 삽입할 HTML 문자열
  * @return {void}
  */
-function insertFirst(node,text){
+export function insertFirst(node,text){
   if(isString(node)) node = getNode(node);
   node.insertAdjacentHTML('afterbegin',text);
 }
@@ -41,7 +42,7 @@ function insertFirst(node,text){
  * @return {void}
  */
 
-function insertLast(node,text){
+export function insertLast(node,text){
   if(isString(node)) node = getNode(node);
   node.insertAdjacentHTML('beforeend',text);
 }
@@ -56,7 +57,7 @@ function insertLast(node,text){
  * @param {string} text - 삽입할 HTML 문자열
  * @return {void}
  */
-function insertAfter(node,text){
+export function insertAfter(node,text){
   if(isString(node)) node = getNode(node);
   node.insertAdjacentHTML('afterend',text);
 }

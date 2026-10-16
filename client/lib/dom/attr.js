@@ -1,11 +1,15 @@
+import { isNull, isUndefined, isString } from "../utils/type.js";
+import { getNode } from "./getNode./js";
 
 /**
  * @function DOM Element의 속성 값을 가져오는 함수
  * @param {HTMLElement | string} node  - Element 또는 css 선택자
  * @param {string} prop - 가져올 속성 이름
  * @throws {TypeError} prop이 문자 타입이 아닐 경우 
+
  * @returns {string | null} - 속성 값, 속성이 없으면 null
  */
+
 
 function getAttr(node, prop){
   if(isString(node)) node = getNode(node);

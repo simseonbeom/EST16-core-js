@@ -1,4 +1,5 @@
-
+import { isObject, isString } from "../utils/type.js";
+import { getNode } from "./getNode.js";
 
 
 /**
@@ -7,6 +8,8 @@
  * @param {string | string[] | object} className
  * @returns {void}
  */
+
+
 
 function addClass(node, className){
   

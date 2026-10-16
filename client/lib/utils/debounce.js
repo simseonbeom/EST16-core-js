@@ -1,6 +1,6 @@
 
 
-function debounce(f,limit = 1000){
+export function debounce(f,limit = 1000){
   let timeout;
   
   return function(e){
