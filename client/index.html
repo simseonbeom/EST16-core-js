@@ -7,76 +7,40 @@
 
   <!-- <script src="./index.js"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-  <script src="./lib/utils/type.js"></script>
-  <script src="./lib/dom/getNode.js"></script>
-  <script src="./lib/dom/attr.js"></script>
-  <script src="./lib/dom/insert.js"></script>
-  <script defer src="./chapter/dom/9.delegation.js"></script>
+  <!-- <script src="./lib/utils/type.js"></script> -->
+  <!-- <script src="./lib/dom/getNode.js"></script> -->
+  <!-- <script src="./lib/dom/attr.js"></script> -->
+  <!-- <script src="./lib/dom/insert.js"></script> -->
+  <script type="module" src="./index.js"></script>
 
   <link rel="stylesheet" href="./style.css"/>
 
 </head>
 <body>
 
+  <form class="calculator">
+      <div class="first">
+        <label for="firstNumber">First Value</label>
+        <input type="number" name="first" id="firstNumber" required/>
+      </div>
+      
+      <div class="operator"> 
+       +
+      </div>
+      
+      <div class="second">
+        <label for="secondNumber">Second Value</label>
+        <input type="number" name="second" id="secondNumber" required/>
+      </div>
+    
+      <input id="clear" type="submit" value="clear"/>
   
-  <nav class="navigation">
-    <h2>메인 메뉴</h2>
-    <ul>
-      <li class="home" data-name="home">
-        <a href="/">HOME</a>
-      </li>
-      <li class="about" data-name="about">
-        <a href="/">ABOUT</a>
-      </li>
-      <li class="contact" data-name="contact">
-        <a href="/">CONTACT</a>
-      </li>
-    </ul>
-  </nav>
-
-
-  <form action="">
-
-    <input type="text"/>
-
-    <button type="submit">submit</button>
-
-  </form>
-
+      <div class="result">
+        -
+      </div>
   
-  <section>
-    <article>
-      <p></p>
-    </article>
-  </section>
+    </form>
+ 
 
-
-
-  <!-- <div class="ground">
-    <div class="ball">
-      <img width="40" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Soccerball.svg/1280px-Soccerball.svg.png?utm_source=ko.wikinews.org&utm_campaign=index&utm_content=thumbnail" alt=""/>
-    </div>
-  </div> -->
-
-
-  <h1 lang="en" class="first">
-    <span>Learning</span>
-    ECMAScript</h1>
-  <!-- 주석입니다. -->
-  <h2 lang="en" class="second">
-    <span>Hello</span>
-     world</h2>
-  <!-- 주석입니다 -->
-  <h3 lang="en" class="third">
-    <span>Javascript</span>
-    <div class="about">hello</div>
-  </h3>
-
-  <button type="button">click me!</button>
-
-  <ul></ul>
-
-  <video id="videoElement" autoplay muted></video>
-  
 </body>
 </html>
