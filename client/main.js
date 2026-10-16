@@ -1,109 +1,60 @@
 
 
+// module을 적극적으로 사용하여 만들어주세요
+
+import data from "./data/data.js";
+import { getNode as $, getRandom } from "./lib/index.js";
 
 
+// 1. 주접 떨기 버튼을 클릭하는 함수
+//      - 주접 떨기 버튼 가져오기
+//      - 클릭 이벤트 연결
+
+// 2. input값 가져오기
+//      - 콘솔에 출력
+
+// 3. data 함수에서 주접 1개를 꺼내기 
+//      - n번째 random 주접을 꺼내기
+//      - Math.random()
+
+// 4. result에 랜더링하기
+//      - insertLast()
 
 
+// 5. 예외 처리 
+//      - 이름이 없을 경우 에러 처리 
+//      - 숫자만 들어올 경우 에러 처리 
 
-import {
-  attr,
-  isString,
-  addClass,
-  insertLast,
-  removeClass,
-  getNode as $,
-  clearContent,
-} from "./lib/index.js";
+const submit = $('#submit');
+const nameField = $('#nameField');
+const result = $('.result');
 
+function handleSubmit(e){
+  e.preventDefault();
 
-// import {useState} from 'react/index.js'
-
-
-
-// import clearContent from "./lib/dom/clearContent.js";
-// import { getNode as $, getNodes } from "./lib/dom/getNode.js";
-// import { insertLast } from "./lib/dom/insert.js";
-// import { attr } from "./lib/dom/attr.js";
-// import { addClass,removeClass } from "./lib/dom/css.js";
-// import { debounce } from "./lib/utils/debounce.js";
+  const name = nameField.value;
+  const list = data(name);
+  const pick = list[getRandom(list.length)];
+  
+  
+  console.log(pick);
+  
+  
+  
 
 
-//  named export    => import { 함수이름/변수이름 as $ } from '경로설정'
-//  default export  => import 함수이름/변수이름, { 함수이름 }  from '경로설정'
-
-
-
-
-// 1. input 선택하기
-// 2. input 이벤트 바인딩
-//    -addEventListener('input')
-// 3. input value값 가져오기
-// 4. 숫자 더하기
-// 5. result에 출력하기
-
-function phase1(){
-
-    const first = $('#firstNumber');
-    const second = $('#secondNumber');
-    const result = $('.result');
-    const clear = $('#clear');
-
-    function handleInput(){
-      const firstValue = Number(first.value);
-      const secondValue = +second.value;
-      const total = firstValue + secondValue;
-
-      clearContent(result)
-      insertLast(result,total);
-    }
-
-    function handleClear(e){
-      e.preventDefault();
-      clearContent(first)
-      clearContent(second)
-      clearContent(result)
-      
-      first.focus();
-    }
-
-    first.addEventListener('input',handleInput)
-    second.addEventListener('input',handleInput)
-    clear.addEventListener('click',handleClear)
 }
 
-phase1();
+submit.addEventListener('click',handleSubmit);
 
 
 
-function phase2(){
-  // const first = getNode('#firstNumber');
-  // const second = getNode('#secondNumber');
-  const calculator = $('.calculator');
-  const result = $('.result');
-  const clear = $('#clear');
-  const numberInputs = [...document.querySelectorAll('input:not(#clear)')];
-
-  function handleInput(){
-    const total = numberInputs.reduce((acc,cur)=> acc + Number(cur.value),0);
-    
-    result.textContent = ''
-    insertLast(result,total);
-
-  }
-
-  function handleClear(e){
-    e.preventDefault();
-    console.log( numberInputs );
-    
-    numberInputs.forEach((elem)=> elem.value = '')
-    result.textContent = '-'
-  }
 
 
-  calculator.addEventListener('input',handleInput)
-  clear.addEventListener('click',handleClear)
 
-}
+
+
+
 
 
 
