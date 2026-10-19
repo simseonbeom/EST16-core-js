@@ -66,7 +66,7 @@ function delayP(options) {
     config = {...defaultOptions,...options};
   }
 
-  const {shouldReacted, data, errorMessage, timeout} = config;
+  const {shouldRejected, data, errorMessage, timeout} = config;
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
