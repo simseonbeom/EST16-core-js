@@ -1,48 +1,49 @@
-import { getNode } from '../dom/index.js';
+import { getNode, insertLast } from '../dom/index.js';
 import { isNumber, isObject } from './type.js';
+import { xhrPromise } from './xhr.js';
 
 function delay(callback, timeout = 500) {
   setTimeout(callback, timeout);
 }
 
-const first = getNode('.first');
-const second = getNode('.second');
+// const first = getNode('.first');
+// const second = getNode('.second');
 
-delay(() => {
-  second.style.top = '-100px';
-  delay(() => {
-    second.style.transform = 'rotate(360deg)';
-    delay(() => {
-      second.style.top = '0px';
-    });
-  });
-});
+// delay(() => {
+//   second.style.top = '-100px';
+//   delay(() => {
+//     second.style.transform = 'rotate(360deg)';
+//     delay(() => {
+//       second.style.top = '0px';
+//     });
+//   });
+// });
 
 
 
 const shouldRejected = false;
 
-const p = new Promise((resolve, reject) => {
-  if (!shouldRejected) {
-    resolve('성공입니다!');
-  } else {
-    reject({ message: '알 수 없는 오류' });
-  }
-});
+// const p = new Promise((resolve, reject) => {
+//   if (!shouldRejected) {
+//     resolve('성공입니다!');
+//   } else {
+//     reject({ message: '알 수 없는 오류' });
+//   }
+// });
 
-p.then((res)=>{
-  console.log( res );
+// p.then((res)=>{
+//   console.log( res );
   
-})
-.then((res)=>{
-  console.log( res );
+// })
+// .then((res)=>{
+//   console.log( res );
   
-})
- // promise object
+// })
+//  // promise object
 
 
 
-console.log(  );
+// console.log(  );
 
 
 
@@ -55,7 +56,7 @@ const defaultOptions = {
 }
 
 
-function delayP(options) {
+export function delayP(options) {
 
   let config =  {...defaultOptions};
 
@@ -95,16 +96,77 @@ function delayP(options) {
 // - 비동기 작업 (순차적으로 일을 처리하는) .then
 
 
-delayP()
-.then(()=>{
-  first.style.top = '-100px';
-  return delayP();
-})
-.then(()=>{
-  first.style.transform = 'rotate(360deg)';
-  return delayP();
-})
-.then(()=>{
-  first.style.top = '0';
+// delayP()
+// .then(()=>{
+//   first.style.top = '-100px';
+//   return delayP();
+// })
+// .then(()=>{
+//   first.style.transform = 'rotate(360deg)';
+//   return delayP();
+// })
+// .then(()=>{
+//   first.style.top = '0';
   
-})
+// })
+
+
+
+async function f(){
+  return 1;
+}
+
+const result = await f();
+
+
+
+
+
+// async : 함수는 무 조 건 Promise Object를 반환 
+// await : 1. promise result를 밖으로 꺼낼 수 있다.
+//         2. 코드 실행 흐름 제어 
+
+async function getData(){
+
+  const data = await xhrPromise.get('https://pokeapi.co/api/v2/pokemon/39')
+
+  insertLast(document.body,`<img src="${data.sprites.other.showdown['front_default']}" alt="" />`)
+
+  // data.forEach((user)=>{
+  //   insertLast(document.body,`<div>${user.name}</div>`)
+  // })
+
+}
+
+
+
+
+// getData();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

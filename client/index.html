@@ -13,13 +13,60 @@
 <body>
   
 
-  <h2>
+  <header class="auth-bar"></header>
 
-    <span class="first">first</span>
-    <span class="second">second</span>
+  <div class="create">
+    <button> CREATE </button>
     
-  </h2>
-  
+    <div class="pop">
+      <form action="/">
+        <div>
+          <label for="nameField">name : </label>
+          <input type="text" id="nameField" required />
+        </div>
+
+        <div>
+          <label for="emailField">email : </label>
+          <input type="email" id="emailField" required />
+        </div>
+
+        <div>
+          <label for="siteField">website : </label>
+          <input type="text" id="siteField" required />
+        </div>
+
+        <div>
+          <button class="cancel" type="button">취소</button>
+          <button class="done" type="submit">생성</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="user-card-list">
+
+      <h2>User List</h2>
+
+      <div class="user-card-inner">
+
+        
+        <!-- <article class="user-card" data-index="user-1">
+          <h3 class="user-name">kindtiger</h3>
+          <div class="user-resouce-info">
+            <div>
+              <a class="user-email" href="mailto:tiger@euid.dev">tiger@euid.dev</a>
+            </div>
+            <div>
+              <a class="user-website" href="http://tiger.com" target="_blank" rel="noopener noreferer">tiger.com</a>
+            </div>
+          </div>
+          <button class="delete">삭제</button>
+        </article> -->
+      </div>
+
+    </div>
+
 
   
 </body>

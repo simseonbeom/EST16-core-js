@@ -31,6 +31,7 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.node,
+        gsap:'readonly'
         // ...customGlobals,
       },
     },
