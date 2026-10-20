@@ -1,4 +1,4 @@
-import { getNode, tiger } from "./lib/index.js";
+import { getNode, saveAuthUser, tiger } from "./lib/index.js";
 
 
 
@@ -15,6 +15,42 @@ function showMessage (message){
 const loginForm = getNode('.login-form');
 const signupForm = getNode('.signup-form');
 const authMessage = getNode('.auth-message');
+
+
+async function handleLogin(e){
+  e.preventDefault();
+
+  const email = getNode('#loginEmail').value.trim();
+  const password = getNode('#loginPassword').value.trim();
+
+  if( !email || !password){
+    showMessage('이메일과 비밀번호를 입력해주세요.');
+    return;
+  }
+
+  // 비밀번호에 &, = 같은 글자가 들어가도 주소가 깨지지 않게 하기 위해 
+  const query = new URLSearchParams({email, password});
+
+  const response = await tiger.get(`${END_POINT}?${query}`);
+
+  if(!response.ok){
+    showMessage('이메일 또는 비밀번호가 올바르지 않습니다.');
+    return;
+  }
+
+  const [user] = response.data;
+
+  saveAuthUser(user);
+
+  
+  if(confirm('로그인 성공! 메인 페이지로 이동합니다.')){
+    location.href = './index.html';
+  }
+
+
+
+}
+
 
 
 async function handleSignup(e){
@@ -49,9 +85,14 @@ async function handleSignup(e){
   }
 
 
+  saveAuthUser(response.data);
+
+
   if(confirm('회원가입이 완료되었습니다. 자동 로그인 후 메인 페이지로 넘어갑니다.')){
     location.href = './index.html';
   }
+  
+
   
 
 
@@ -60,6 +101,7 @@ async function handleSignup(e){
 
 
 
+loginForm.addEventListener('submit',handleLogin);
 signupForm.addEventListener('submit',handleSignup);
 
 
