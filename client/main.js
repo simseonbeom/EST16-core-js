@@ -1,60 +1,43 @@
+const template = document.createElement('template');
 
+template.innerHTML = `
+  <style> h2{color:red;font-weight:bold;}</style>
+  <h2>hello world</h2>
+  <p>웹 컴포넌트에 대해 학습합니다.</p>
+`;
 
-
-
-
-class CustomButton extends HTMLElement{
-
-  constructor(){
+class MyElement extends HTMLElement {
+  constructor() {
     super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    this.shadowRoot.append(template.content.cloneNode(true));
   }
 
-  connectedCallback(){
-    console.log('connected');
-    this.attachEvent();
-    
+  connectedCallback() {
+    // this.shadowRoot.innerHTML = `
+    // <style> p { color: orange; } </style>
+    // <p>
+    //   Hello
+    //    ${this.getAttribute('name')}
+    // </p>`;
   }
-
-  disconnectedCallback(){
-    console.log('disconnected');
-  }
-
-  static get observedAttributes(){
-    return ['data-value'];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue){
-    console.log( name, oldValue, newValue );
-    this.render();
-  }
-
-  // 내가 맘대로 정한 메서드 
-
-  handleClick(){
-    console.log('clicked');
-    this.dataset.value = 10;
-    
-  }
-
-  attachEvent(){
-    this.addEventListener('click',this.handleClick);
-  }
-
-
-  render(){
-    this.innerHTML = this.dataset.value;
-  }
-
-
 }
 
+customElements.define('my-element', MyElement);
 
-customElements.define('my-button',CustomButton);
-
-
-
-
-
-
-
-
+customElements.define(
+  'user-card',
+  class extends HTMLElement {
+    connectedCallback() {
+      this.attachShadow({ mode: 'open' });
+      this.shadowRoot.innerHTML = `
+      <div>Name:
+        <slot></slot>
+      </div>
+      <div>Birthday:
+        <slot name="birthday"></slot>
+      </div>
+    `;
+    }
+  }
+);

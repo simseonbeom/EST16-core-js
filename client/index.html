@@ -1,26 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko-KR">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>웹 컴포넌트를 배워보자!</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 컴포넌트를 배워보자!</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
 
-  <script type="module" src="./main.js"></script>
-  <link rel="stylesheet" href="./style.css"/>
+    <script type="module" src="./main.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- <input type="range" /> -->
 
-</head>
-<body>
-  
+    <my-element name="tiger"> </my-element>
 
+    <user-card>
+      <span slot="username">John Smith</span>
+      <span slot="birthday">01.01.2001</span>
+      <div>hello</div>
+    </user-card>
 
-  <my-button data-value="0">
-    <button>BUTTON</button>
-  </my-button>
+    <!-- <ul class="randerPlace"></ul> -->
 
-  
+    <!-- <template id="temp">
+      <li>menu01</li>
+      <li>menu02</li>
+      <li>menu03</li>
+    </template> -->
 
-  
-</body>
+    <!-- <my-button data-value="0">
+      <button>BUTTON</button>
+    </my-button> -->
+
+    <!-- <user-info id="outer">
+      <user-info id="inner"></user-info>
+    </user-info> -->
+
+    <!-- <button is="hello-button">BUTTON</button> -->
+  </body>
 </html>
