@@ -26,7 +26,7 @@ class TodoApp extends HTMLElement {
     this.state = {
       todos:[
         {id:1, text: '웹 컴포넌트 공부하기', done: false},
-        {id:2, text: 'MW4하기', done: false},
+        {id:2, text: 'MW4하기', done: true},
       ],
       nextId: 3
     }
@@ -36,9 +36,14 @@ class TodoApp extends HTMLElement {
     this.input = this.shadowRoot.querySelector('.input');
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleToggleEvent = this.handleToggleEvent.bind(this);
+    this.handleRemoveEvent = this.handleRemoveEvent.bind(this);
+
   }
   connectedCallback(){
     this.form.addEventListener('submit',this.handleSubmit);
+    this.shadowRoot.addEventListener('todo-toggle',this.handleToggleEvent)
+    this.shadowRoot.addEventListener('todo-remove',this.handleRemoveEvent)
     this.render();
   }
   // 데이터 업데이트
@@ -57,7 +62,6 @@ class TodoApp extends HTMLElement {
     });
   }
 
-
   handleSubmit(e){
     e.preventDefault();
 
@@ -68,35 +72,43 @@ class TodoApp extends HTMLElement {
     this.addTodo(text);
     this.input.value = '';
     this.input.focus();
-    
-
-    // this.addTodo()
-
   }
 
+  toggleTodo(id){
+    const todos = this.state.todos.map((todo)=>
+      todo.id === id ? {...todo, done: !todo.done} : todo
+    )
+
+    this.setState({todos});
+  }
+
+  removeTodo(id){
+    this.setState({ todos : this.state.todos.filter((todo)=> todo.id !== id)})
+    
+  }
+
+  handleToggleEvent(e){ this.toggleTodo(e.detail.id)}
+  handleRemoveEvent(e){ this.removeTodo(e.detail.id)}
 
 
   render(){
 
     const { todos } = this.state;
 
+    this.list.replaceChildren(
+      ...todos.map(({id, text, done})=> {
+        const item = document.createElement('c-todo-item');
 
-    // this.list.innerHTML = todos.map(({text})=> `<li> ${text} </li>`).join('')
+        item.setAttribute('todo-id',id);
+        item.setAttribute('done',done);
+        item.textContent = text; // slot으로 들어갈 light DOM
 
-
-    const item = document.createElement('c-todo-item');
-    item.setAttribute('todo-id',1);
-    item.setAttribute('done',false);
-    item.textContent = '영화보기';
-
-    console.log( item );
-    
-    
-
+        return item
+      })
+    )
 
   }
 }
-
 
 customElements.define('c-todo-app',TodoApp);
 
