@@ -1,3 +1,5 @@
+import {} from './TodoItem.js';
+
 const template = document.createElement('template');
 
 template.innerHTML = `
@@ -30,19 +32,67 @@ class TodoApp extends HTMLElement {
     }
 
     this.list = this.shadowRoot.querySelector('.list');
+    this.form = this.shadowRoot.querySelector('.form');
+    this.input = this.shadowRoot.querySelector('.input');
 
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   connectedCallback(){
-
+    this.form.addEventListener('submit',this.handleSubmit);
     this.render();
   }
+  // 데이터 업데이트
+  setState(nextState){
+    this.state = {...this.state, ...nextState};
+    this.render();
+  }
+  // todo를 추가 
+  addTodo(text){
+    
+    const { todos, nextId } = this.state;
+
+    this.setState({
+      todos:[...todos, {id: nextId, text, done:false }],
+      nextId: nextId + 1
+    });
+  }
+
+
+  handleSubmit(e){
+    e.preventDefault();
+
+    const text = this.input.value.trim();
+
+    if(!text) return; 
+
+    this.addTodo(text);
+    this.input.value = '';
+    this.input.focus();
+    
+
+    // this.addTodo()
+
+  }
+
+
 
   render(){
-    // 리스트 렌더링  <li> {{ text }} </li> 반복 배열, 배열의 메서드 
 
-    const { todos } = this.state
-    this.list.innerHTML = todos.map(({text})=> `<li> ${text} </li>`).join('')
+    const { todos } = this.state;
+
+
+    // this.list.innerHTML = todos.map(({text})=> `<li> ${text} </li>`).join('')
+
+
+    const item = document.createElement('c-todo-item');
+    item.setAttribute('todo-id',1);
+    item.setAttribute('done',false);
+    item.textContent = '영화보기';
+
+    console.log( item );
+    
+    
+
 
   }
 }
